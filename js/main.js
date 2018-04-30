@@ -1,19 +1,20 @@
 let speed = 30
+
 function writeCode(precode, code, callback) {
     let pcode = precode || ''
-    let Domcode = document.querySelector('.code > pre')
     let n = 0
+    let Domcode = document.querySelector('.code > pre')
     setTimeout(function fn(){
         Domcode.innerHTML = Prism.highlight(pcode + code.substring(0, n), Prism.languages.css, 'css');
-        styleTag.innerHTML = result = pcode + code.substring(0, n)
+        styleTag.innerHTML = result = pcode + code.substring(0, n)        
         Domcode.scrollTop = Domcode.scrollHeight
         n++
         if (n > code.length) {
             callback && callback.call()
         }else{
+            
             setTimeout(fn,speed)
         }
-        
     }, speed)
 }
 
@@ -145,4 +146,5 @@ function smileactive(){
     }
 }
 smileactive()
+
 writeCode('', css, () => { console.log(1) })

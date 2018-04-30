@@ -12,13 +12,15 @@ body {
     width: 2em; 
     height: 2em;
     vertical-align: -0.15em;
-    fill: white;
+    fill: red;
     overflow: hidden;
     margin: 0 5px;
+    padding: 5px;
+    border: 1px solid transparent;
+    border-radius: 50%;
 }
 .icon.active {
-    border-radius: 50%;
-    background: red;
+    border: 1px solid wheat;
 }
 
 
@@ -33,6 +35,7 @@ body {
 }
 
 .input-block{
+    text-align: center;
     width: 100%;
     background: #231f20;
     position: absolute;   
@@ -41,10 +44,6 @@ body {
     height: 40vh;
     position: relative;
     background: #231f20;
-}
-
-.speed.active {
-    border-radius: 10px;
 }
 
 .mouth.active {
