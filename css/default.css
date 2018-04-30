@@ -6,9 +6,107 @@
 body {
     height: 100vh;
     width: 100%;
+    background: #231f20;
+}
+.icon {
+    width: 2em; 
+    height: 2em;
+    vertical-align: -0.15em;
+    fill: white;
+    overflow: hidden;
+    margin: 0 5px;
+}
+.icon.active {
+    border-radius: 50%;
+    background: red;
+}
+
+
+.code {
+    background: rgba(255, 255, 0, 0.8);
+    padding: 5px;
 }
 
 .code > pre {
     height: 50vh;
     overflow: auto;
+}
+
+.input-block{
+    width: 100%;
+    background: #231f20;
+    position: absolute;   
+}
+.wrapper{
+    height: 40vh;
+    position: relative;
+    background: #231f20;
+}
+
+.speed.active {
+    border-radius: 10px;
+}
+
+.mouth.active {
+    animation: smile 3s infinite ease-in-out;
+}
+
+@keyframes smile {
+    0% {
+        border-radius: 150% 100% / 100% 100% 200% 200%;
+    }
+    85% {
+        border-radius: 150% 100% / 100% 100% 200% 200%;
+        transform: translateX(-80%) translateY(-50%);
+    }
+    90% {
+        border-radius: 250% 100% / 100% 100% 200% 200%;
+        transform: translateX(-80%) translateY(-50%) scaleY(0.6) scaleX(1.2);
+    }
+    95% {
+        border-radius: 250% 100% / 100% 100% 200% 200%;
+        transform: translateX(-80%) translateY(-50%) scaleY(0.6) scaleX(1.2);
+    }
+    100% {
+        border-radius: 150% 100% / 100% 100% 200% 200%;
+        transform: translateX(-80%) translateY(-50%);
+    }
+}
+
+.eye:nth-of-type(1).active {
+    animation: leyesmile 3s infinite ease-in-out;
+}
+
+@keyframes leyesmile {
+    85% {
+        transform: translateX(-50%) translateY(-50%);
+    }
+    90% {
+        transform: translateX(-50%) translateY(-50%) scaleY(0.6) scaleX(1.2);
+    }
+    95% {
+        transform: translateX(-50%) translateY(-50%) scaleY(0.6) scaleX(1.2);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+
+.eye:nth-of-type(2).active {
+    animation: reyesmile 3s infinite ease-in-out;
+}
+
+@keyframes reyesmile {
+    85% {
+        transform: translateX(-50%) translateY(-50%) scaleX(-1);
+    }
+    90% {
+        transform: translateX(-50%) translateY(-50%) scaleY(0.6) scaleX(-1.2);
+    }
+    95% {
+        transform: translateX(-50%) translateY(-50%) scaleY(0.6) scaleX(-1.2);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-50%) scaleX(-1);
+    }
 }
