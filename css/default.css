@@ -1,12 +1,12 @@
  * {   
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-
 body {
     height: 100vh;
     width: 100%;
-    background: #231f20;
+    background: #fff;
 }
 .icon {
     width: 2em; 
@@ -20,32 +20,40 @@ body {
     border-radius: 50%;
 }
 .icon.active {
-    border: 1px solid wheat;
+    opacity: 0.3;
 }
 
-
 .code {
-    background: rgba(255, 255, 0, 0.8);
     padding: 5px;
 }
 
 .code > pre {
-    height: 50vh;
+    height: 40vh;
     overflow: auto;
+    background: #FFFFFF;
+    border-radius: 5px;
+    margin: 1em 3em;
+    box-shadow: 0px 2px 30px 0px rgba(0,0,0,0.5);
 }
 
-.input-block{
-    text-align: center;
-    width: 100%;
-    background: #231f20;
-    position: absolute;   
-}
 .wrapper{
     height: 40vh;
     position: relative;
     background: #231f20;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 1em 3em;
+    box-shadow: 0px 2px 30px 0px rgba(0,0,0,0.5);
 }
+.input-block{
+    text-align: center;
+    background: #000;
+    border-radius: 5px;
+    margin: 1em 3em;
+    padding: .5em;
+    box-shadow: 0px 2px 30px 0px rgba(0,0,0,0.5);
 
+}
 .mouth.active {
     animation: smile 3s infinite ease-in-out;
 }
@@ -108,4 +116,7 @@ body {
     100% {
         transform: translateX(-50%) translateY(-50%) scaleX(-1);
     }
+}
+.ssmile{
+    background: #43A7FF;
 }

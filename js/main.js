@@ -37,7 +37,7 @@ var css = `
     width: 80px;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 15%;
+    bottom: 25%;
     border-radius: 130% 130% / 120% 120% 160% 160%;
     background: white;
 }
