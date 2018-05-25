@@ -28,18 +28,14 @@ var css = `
 
 .nhead {
     position: absolute;
-    display: flex;
-    position: fixed;
     border: 1px solid white;
-    align-items: center;
-    justify-content: center;
     height: 130px;
     width: 80px;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 25%;
     border-radius: 130% 130% / 120% 120% 160% 160%;
     background: white;
+    top: 20%;
 }
 /* 嘴巴
  */
