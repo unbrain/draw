@@ -1,23 +1,3 @@
-let speed = 30
-
-function writeCode(precode, code, callback) {
-    let pcode = precode || ''
-    let n = 0
-    let Domcode = document.querySelector('.code > pre')
-    setTimeout(function fn(){
-        Domcode.innerHTML = Prism.highlight(pcode + code.substring(0, n), Prism.languages.css, 'css');
-        styleTag.innerHTML = result = pcode + code.substring(0, n)        
-        Domcode.scrollTop = Domcode.scrollHeight
-        n++
-        if (n > code.length) {
-            callback && callback.call()
-        }else{
-            
-            setTimeout(fn,speed)
-        }
-    }, speed)
-}
-
 var css = `
 /* 今天我们来画《千与千寻》
  * 里的无脸男
@@ -105,6 +85,24 @@ var css = `
 /* O(∩_∩)O哈哈~，谢谢观看
  */
 `
+let speed = 30
+
+function writeCode(precode, code, callback) {
+    let pcode = precode || ''
+    let n = 0
+    let Domcode = document.querySelector('.code > pre')
+    setTimeout(function fn() {
+        Domcode.innerHTML = Prism.highlight(pcode + code.substring(0, n), Prism.languages.css, 'css');
+        styleTag.innerHTML = result = pcode + code.substring(0, n)
+        Domcode.scrollTop = Domcode.scrollHeight
+        n++
+        if (n > code.length) {
+            callback && callback.call()
+        } else {
+            setTimeout(fn, speed)
+        }
+    }, speed)
+}
 
 function getSpeed() {
     let vspeed = document.querySelector('.speed')
