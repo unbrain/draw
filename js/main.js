@@ -2,8 +2,7 @@ var css = `
 /* 今天我们来画《千与千寻》
  * 里的无脸男
  * 我们先来画他的头
- * 点击左下角的按钮有动画效果┗|｀O′|┛ 嗷~~
- * 旁边的是控制速度的( ⊙ o ⊙ )啊！
+ * 点击左下角隐藏代码┗|｀O′|┛ 嗷~~
  */
 
 .nhead {
@@ -12,10 +11,11 @@ var css = `
     height: 130px;
     width: 80px;
     left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 130% 130% / 120% 120% 160% 160%;
     background: white;
-    top: 20%;
+
 }
 /* 嘴巴
  */
@@ -110,15 +110,15 @@ function getSpeed() {
         speed = 100 - (vspeed.value + 0) * 100
         console.log(speed)
     }
-    
+
 }
 getSpeed()
 
-function smileactive(){
+function smileactive() {
     let sactive = document.querySelector('.ssmile')
     let mouthactive = document.querySelector('.mouth')
     let eyeactive = document.querySelectorAll('.eye')
-    
+
     let i = 1
     sactive.ontouchstart = () => {
         if (i) {
@@ -127,7 +127,7 @@ function smileactive(){
             eyeactive.forEach(e => {
                 e.classList.add('active')
             });
-            
+
             i = 0
         } else {
             i = 1
@@ -141,4 +141,23 @@ function smileactive(){
 }
 smileactive()
 
-writeCode('', css, () => { console.log(1) })
+function codeActive() {
+    let code = document.querySelector('.code>pre')
+    let button = document.querySelector('.button')
+    let i = true
+    button.ontouchstart = () => {
+        if(i){
+            code.classList.add('active')
+            button.textContent = '显示代码'
+            i = !i
+        }else{
+            code.classList.remove('active')
+            i = !i
+        }
+        
+    }
+}
+codeActive()
+writeCode('', css, () => {
+    console.log(1)
+})
