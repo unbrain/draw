@@ -84,7 +84,7 @@ var css = `
 /* O(∩_∩)O哈哈~，谢谢观看
  */
 `
-let speed = 25
+let speed = 0
 
 function writeCode(precode, code, callback) {
     let pcode = precode || ''
@@ -126,11 +126,11 @@ function smileactive() {
     });
 }
 
-
+let i = true
 function codeActive() {
     let code = document.querySelector('.code>pre')
     let button = document.querySelector('.button')
-    let i = true
+    
     button.ontouchstart = () => {
         if (i) {
             code.classList.add('active')
@@ -142,11 +142,19 @@ function codeActive() {
             i = !i
         }
     }
+    return i
 }
 codeActive()
 writeCode('', css, () => {
-    console.log(1)
+    let code = document.querySelector('.code>pre')
     let button = document.querySelector('.button')
-    button.textContent = '显示代码'
+    if (i){
+        setTimeout(() => {
+            code.classList.add('active')
+            button.textContent = '显示代码'
+            i=!i
+        }, 1000);
+        
+    }
     smileactive()
 })
