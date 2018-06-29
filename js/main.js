@@ -85,7 +85,7 @@ var css = `
 /* O(∩_∩)O哈哈~，谢谢观看
  */
 `
-let speed = 30
+let speed = 0
 
 function writeCode(precode, code, callback) {
     let pcode = precode || ''
@@ -98,8 +98,10 @@ function writeCode(precode, code, callback) {
         n++
         if (n > code.length) {
             callback && callback.call()
+
         } else {
             setTimeout(fn, speed)
+
         }
     }, speed)
 }
@@ -119,46 +121,38 @@ function smileactive() {
     let mouthactive = document.querySelector('.mouth')
     let eyeactive = document.querySelectorAll('.eye')
 
-    let i = 1
-    sactive.ontouchstart = () => {
-        if (i) {
-            sactive.classList.add('active')
-            mouthactive.classList.add('active')
-            eyeactive.forEach(e => {
-                e.classList.add('active')
-            });
+    sactive.classList.add('active')
+    mouthactive.classList.add('active')
+    eyeactive.forEach(e => {
+        e.classList.add('active')
+    });
 
-            i = 0
-        } else {
-            i = 1
-            sactive.classList.remove('active')
-            mouthactive.classList.remove('active')
-            eyeactive.forEach(e => {
-                e.classList.remove('active')
-            });
-        }
-    }
+
+
 }
-smileactive()
+
 
 function codeActive() {
     let code = document.querySelector('.code>pre')
     let button = document.querySelector('.button')
     let i = true
     button.ontouchstart = () => {
-        if(i){
+        if (i) {
             code.classList.add('active')
             button.textContent = '显示代码'
             i = !i
-        }else{
+        } else {
             code.classList.remove('active')
             button.textContent = '隐藏代码'
             i = !i
         }
-        
     }
 }
 codeActive()
 writeCode('', css, () => {
     console.log(1)
+
+    button.textContent = '显示代码'
+    smileactive()
+
 })
