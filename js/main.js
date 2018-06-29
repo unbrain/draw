@@ -152,6 +152,7 @@ function codeActive() {
             i = !i
         }else{
             code.classList.remove('active')
+            button.textContent = '隐藏代码'
             i = !i
         }
         
